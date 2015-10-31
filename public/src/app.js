@@ -1,4 +1,4 @@
-angular.module('contactsApp', ['ngRoute']);
+angular.module('contactsApp', ['ngRoute', 'ngResource']);
 
 angular.module('contactsApp')
     .config(['$routeProvider', '$locationProvider',
@@ -11,7 +11,4 @@ angular.module('contactsApp')
 
           $locationProvider.html5Mode(true);
       }
-    ])
-    .controller('ListController', function($scope){
-      $scope.title = 'Hellow Aj';
-    });
+    ]);
