@@ -1,0 +1,15 @@
+# Created by http://www.ajinkyaxjs.com
+### Node ###
+# Logs
+logs
+*.log
+npm-debug.log*
+node_modules
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+public/lib
