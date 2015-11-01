@@ -3,12 +3,32 @@
     "id": 1,
     "userId": 1,
     "firstName": [
-      "Jack",
+      "Sejal",
       "text"
     ],
     "lastName": [
-      "Rackum",
+      "Borade",
       "text"
+    ]
+  },
+  {
+    "id": 2,
+    "userId": 1,
+    "firstName": [
+      "Ellery Oliver",
+      "text"
+    ],
+    "lastName": [
+      "Queen",
+      "text"
+    ],
+    "homephone": [
+      "123-456-7890",
+      "tel"
+    ],
+    "email": [
+      "eoq@gmail.com",
+      "email"
     ]
   },
   {
@@ -24,12 +44,14 @@
     ]
   },
   {
+    "id": 4,
+    "userId": 1,
     "firstName": [
       "Ajinkya",
       "text"
     ],
     "lastName": [
-      "Doe",
+      "Borade",
       "text"
     ],
     "email": [
@@ -51,11 +73,11 @@
     "website": [
       "",
       "url"
-    ],
-    "userId": 1,
-    "id": 4
+    ]
   },
   {
+    "id": 5,
+    "userId": 1,
     "firstName": [
       "Sally",
       "text"
@@ -71,28 +93,6 @@
     "favoriteColor": [
       "#85dc28",
       "color"
-    ],
-    "userId": 1,
-    "id": 5
-  },
-  {
-    "id": 2,
-    "userId": 1,
-    "firstName": [
-      "Ellery Oliver",
-      "text"
-    ],
-    "lastName": [
-      "Queen",
-      "text"
-    ],
-    "homephone": [
-      "123-456-7890",
-      "tel"
-    ],
-    "email": [
-      "eoq@gmail.com",
-      "email"
     ]
   }
 ]

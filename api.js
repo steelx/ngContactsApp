@@ -6,6 +6,12 @@ var express    = require('express'),
     router     = express.Router();
 
 router
+    .use(function (req, res, next) {
+        if (!req.user) {
+          req.user = {id: 1};
+        }
+        next();
+    })
     .use(bodyParser.json())
     .route('/contact')
         .get(function (req, res) {
@@ -30,7 +36,7 @@ router
     .route('/contact/:id')
         .get(function (req, res) {
             db.findOne(req.dbQuery, function (err, data) {
-                res.json(data);    
+                res.json(data);
             });
         })
         .put(function (req, res) {
