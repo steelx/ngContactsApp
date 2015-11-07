@@ -15,7 +15,7 @@
     "id": 2,
     "userId": 1,
     "firstName": [
-      "Ellery Oliver",
+      "Ashwini",
       "text"
     ],
     "lastName": [
@@ -27,7 +27,7 @@
       "tel"
     ],
     "email": [
-      "eoq@gmail.com",
+      "ash@gmail.com",
       "email"
     ]
   },
@@ -35,11 +35,11 @@
     "id": 3,
     "userId": 1,
     "firstName": [
-      "Maria",
+      "Sussie",
       "text"
     ],
     "lastName": [
-      "Quinn",
+      "Eloquint",
       "text"
     ]
   },
@@ -63,7 +63,7 @@
       "tel"
     ],
     "cellPhone": [
-      "",
+      "9820098200",
       "tel"
     ],
     "birthday": [
@@ -71,7 +71,7 @@
       "date"
     ],
     "website": [
-      "",
+      "http://www.ajinkyaxjs.com",
       "url"
     ]
   },

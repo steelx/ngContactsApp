@@ -7,6 +7,9 @@ var express    = require('express'),
 
 router
     .use(function (req, res, next) {
+        //this section temporory since it requires a User,
+        //we are passing user id as 1 by default
+        //user id who created those contacts into database
         if (!req.user) {
           req.user = {id: 1};
         }
@@ -15,11 +18,13 @@ router
     .use(bodyParser.json())
     .route('/contact')
         .get(function (req, res) {
+            //find data related to that ID
             db.find({ userId: parseInt(req.user.id, 10) }, function (err, data) {
                 res.json(data);
             });
         })
         .post(function (req, res) {
+            //when user tries to create new data
             var contact = req.body;
             contact.userId = req.user.id;
 

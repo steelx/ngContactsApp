@@ -1,0 +1,13 @@
+<h2>Add New Contact</h2>
+
+<form name="newContact" novalidate="novalidate" class="form-horizontal">
+    <form-field record="contact" field="firstName" live="false" required="true"></form-field>
+    <form-field record="contact" field="lastName" live="false" required="true"></form-field>
+
+    <div class="row form-group">
+        <div class="col-sm-offset-2">
+            <button type="button" class="btn btn-primary" ng-click="save()">Create contact</button>
+        </div>
+    </div>
+
+</form>
