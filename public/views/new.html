@@ -1,10 +1,13 @@
-<h2>Add New Contact</h2>
+<h3>Add New</h3>
 
 <form name="newContact" novalidate="novalidate" class="form-horizontal">
     <form-field record="contact" field="firstName" live="false" required="true"></form-field>
     <form-field record="contact" field="lastName" live="false" required="true"></form-field>
 
     <form-field ng-repeat="(k,v) in contact | keyFilter: 'firstName' | keyFilter: 'lastName' " record="contact" field="{{k}}"></form-field>
+
+
+    <new-field record="contact" live="false"></new-field>
 
     <div class="row form-group">
         <div class="col-sm-offset-2">

@@ -1,4 +1,4 @@
-angular.module('contactsApp', ['ngRoute', 'ngResource']);
+angular.module('contactsApp', ['ngRoute', 'ngResource', 'ngMessages']);
 
 angular.module('contactsApp')
     .config(['$routeProvider', '$locationProvider',

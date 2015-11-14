@@ -1,5 +1,5 @@
 <div class="row form-group" ng-form="{{field}}" ng-class="{ 'has-error': {{field}}.$dirty &&  {{field}}.$invalid }">
-    <label for="" class="col-sm-2 control-label">{{ field | labelCase }} <span ng-if="required"></span></label>
+    <label class="col-sm-2 control-label">{{ field | labelCase }} <span ng-if="required"></span></label>
 
     <div class="col-sm-6" ng-switch="required">
         <input ng-switch-when="true"
@@ -29,7 +29,8 @@
         </div>
     </div>
 
-    <div class="col-sm-4 has-error" ng-show="{{field}}.$dirty &&  {{field}}.$invalid" ng-messages="{{field}}.$error">
+
+    <div class="col-sm-4 has-error" ng-show="{{field}}.$dirty &&  {{field}}.$invalid" ng-messages="myForm.myName.$error">
         <p class="control-label" ng-message="required">{{field | labelCase}} is required.</p>
         <p class="control-label" ng-repeat="(k, v) in types" ng-message="{{k}}">{{field | labelCase}} {{v[1]}}</p>
     </div>

@@ -29,7 +29,7 @@ angular.module('contactsApp')
                 });
 
                 $scope.types = FieldTypes;
-                $scope.remove = function removeField(field) {
+                $scope.remove = function removeContact(field) {
                     delete $scope.record[field];
                     $scope.blurUpdate();
                 };
@@ -43,9 +43,40 @@ angular.module('contactsApp')
                 };
 
                 var saveTimeout;
-                $scope.update = function callBlurUpdate(argument) {
+                $scope.update = function callBlurUpdate() {
                     $timeout.cancel(saveTimeout);
                     saveTimeout = $timeout($scope.blurUpdate, 1000);
+                };
+            }
+        };
+    })
+    .directive('newField', function newField($filter, FieldTypes) {
+        return {
+            restrict: 'EA',
+            templateUrl: 'views/newField.html',
+            scope: {
+                record: '=',
+                live: '@'
+            },
+            require: '^form',
+            link: function ($scope, element, attr, parentForm) {
+                $scope.types = FieldTypes;
+                $scope.field = {};
+
+                $scope.show = function showInputNewField(type) {
+                    $scope.field.type = type;
+                    $scope.display = true;
+                };
+
+                $scope.remove = function removeInputNewField() {
+                    $scope.field = {};
+                    $scope.display = false;
+                };
+
+                $scope.add = function addInputNewField() {
+                    if (parentForm.newField.$valid) {
+                        $scope.record[$scope.field.name] = [$scope.field.value, $scope.field.type];
+                    }
                 };
             }
         };
