@@ -1,8 +1,15 @@
 angular.module('contactsApp')
     .filter('labelCase', function labelCase() {
         return function changeLabelCase(input) {
-            input = input.replace(/([A-Z])/g, ' $1');
-            return input[0].toUpperCase() + input.slice(1);
+            var text = input.replace(/([A-Z])/g, ' $1');
+            return text[0].toUpperCase() + text.slice(1);
+        };
+    })
+    .filter('camelCase', function camelCase() {
+        return function (input) {
+            return input.toLowerCase().replace(/ (\w)/g, function (match, letter) {
+                return letter.toUpperCase();
+            });
         };
     })
     .filter('keyFilter', function keyFilter() {

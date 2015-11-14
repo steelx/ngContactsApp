@@ -75,7 +75,13 @@ angular.module('contactsApp')
 
                 $scope.add = function addInputNewField() {
                     if (parentForm.newField.$valid) {
-                        $scope.record[$scope.field.name] = [$scope.field.value, $scope.field.type];
+                        $scope.record[$filter('camelCase')($scope.field.name)] = [$scope.field.value, $scope.field.type];
+                        $scope.remove();
+                        if ($scope.live === 'true') {
+                            $scope.record.$update(function updatedCallback(updatedRecord) {
+                                $scope.record = updatedRecord;
+                            });
+                        }
                     }
                 };
             }
