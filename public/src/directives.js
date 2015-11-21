@@ -35,7 +35,7 @@ angular.module('contactsApp')
                 };
 
                 $scope.blurUpdate = function updateContactModel() {
-                    if ($scope.live === 'true') {//live is a string value
+                    if ($scope.live !== 'false') {//live is a string value
                         $scope.record.$update(function updatedCallback(updatedRecord) {
                             $scope.record = updatedRecord;
                         });
@@ -77,7 +77,7 @@ angular.module('contactsApp')
                     if (parentForm.newField.$valid) {
                         $scope.record[$filter('camelCase')($scope.field.name)] = [$scope.field.value, $scope.field.type];
                         $scope.remove();
-                        if ($scope.live === 'true') {
+                        if ($scope.live !== 'false') {
                             $scope.record.$update(function updatedCallback(updatedRecord) {
                                 $scope.record = updatedRecord;
                             });

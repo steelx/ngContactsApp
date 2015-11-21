@@ -11,7 +11,7 @@ angular.module('contactsApp')
       $scope.sort.order = false;
 
       $scope.show = function showSingleContact(id) {
-        $location.url('/contact/' + id);
+        $location.url('/contacts/' + id);
       };
     })
     .controller('NewController', function NewController($scope, Contact, $location) {
@@ -35,5 +35,16 @@ angular.module('contactsApp')
                 $scope.contact.$save();
                 $location.url('/contacts');
             }
+        };
+    })
+    .controller('SingleController', function SingleController($scope, $location, $routeParams, Contact) {
+        $scope.contact = Contact.get({id: parseInt($routeParams.id, 10)});
+        $scope.delete = function deleteContact() {
+            $scope.contact.$delete();
+            $location.url('/contacts');
+        };
+
+        $scope.backBtn = function () {
+            $location.url('/contacts');
         };
     });
